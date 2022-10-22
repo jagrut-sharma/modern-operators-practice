@@ -30,8 +30,60 @@ const restaurant = {
       close: 24,
     },
   },
+
+  deliveryOrder: function ({
+    starterIndex = 0,
+    mainIndex = 1,
+    time = '20:30',
+    address = 'Italy',
+  }) {
+    console.log(
+      `Hi, your order is received, your order is ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} and will be delivered to ${address} on ${time}`
+    );
+  },
 };
 
+// Destructuring Objects
+
+// const { name, categories, openingHours } = restaurant; // Properties name must be same
+const {
+  name: restaurantName = 'Sher-e Punjab',
+  categories: menuAvailable = [
+    'punjabi',
+    'chinese',
+    'south indian',
+    'kathyawadi',
+  ],
+  openingHours: duration,
+} = restaurant; // Assign your desired name
+// console.log(name, categories, openingHours);
+console.log(restaurantName, menuAvailable, duration);
+
+let a = 99;
+let b = 159;
+const obj = { a: 23, b: 46 };
+// let {a, b} = obj; // Gives error
+({ a, b } = obj); // This will overwrite above variables
+console.log(a, b);
+
+// const { fri } = duration;
+const {
+  fri: { open: openingTime = 12, close: closingTime = 11 },
+} = duration;
+console.log(openingTime, closingTime);
+
+restaurant.deliveryOrder({
+  time: '22:30',
+  starterIndex: 2,
+  mainIndex: 2,
+  address: 'India',
+});
+
+restaurant.deliveryOrder({
+  starterIndex: 2,
+}); // default values will be applied
+
+/*
 // const arr = [2, 4, 6, 8];
 // const [x, , z] = arr;
 // console.log(x, z);
@@ -61,3 +113,4 @@ let sampleArr = [1, 2, 3];
 // sampleArr = [5];
 const [a = 1, b = 1, , d = 1] = sampleArr; // WIll assign default value as 1, used in API calls
 console.log(a, b, d);
+*/

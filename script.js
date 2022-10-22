@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  orderFood: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,6 +31,33 @@ const restaurant = {
     },
   },
 };
-const arr = [2, 4, 6, 8];
-const [x, , z] = arr;
-console.log(x, z);
+
+// const arr = [2, 4, 6, 8];
+// const [x, , z] = arr;
+// console.log(x, z);
+
+// Destructuring a received result.
+let [first, , secondary] = restaurant.categories;
+console.log(first, secondary);
+
+// Switch values
+[secondary, first] = [first, secondary];
+console.log(first, secondary);
+
+// receiving two values from function
+const [starterItem, mainItem] = restaurant.orderFood(2, 0);
+console.log(starterItem, mainItem);
+
+//nested arrays
+const nestedArr = [1, 2, [3, 4, 5]];
+const [i, , j] = nestedArr;
+console.log(i, j);
+
+const [k, , [l, , n]] = nestedArr;
+console.log(k, l, n);
+
+//default value
+let sampleArr = [1, 2, 3];
+// sampleArr = [5];
+const [a = 1, b = 1, , d = 1] = sampleArr; // WIll assign default value as 1, used in API calls
+console.log(a, b, d);

@@ -31,18 +31,46 @@ const restaurant = {
     },
   },
 
-  deliveryOrder: function ({
-    starterIndex = 0,
-    mainIndex = 1,
-    time = '20:30',
-    address = 'Italy',
-  }) {
-    console.log(
-      `Hi, your order is received, your order is ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} and will be delivered to ${address} on ${time}`
-    );
+  orderPasta: function (ingA, ingB, ingC) {
+    console.log(`Here is your delicious pasta with ${ingA}, ${ingB}, ${ingC}`);
   },
 };
 
+const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5, 6];
+console.log([...newArr, ...arr]);
+console.log(newArr);
+console.log(arr);
+console.log(...arr);
+console.log(...newArr);
+
+const newMenu = [
+  ...restaurant.starterMenu,
+  'Paneer Tikka Masala',
+  'Manchurian',
+];
+console.log(newMenu);
+
+const mainMenuCopy = [...restaurant.mainMenu];
+const menu = [...mainMenuCopy, ...restaurant.starterMenu];
+console.log(menu);
+
+const str = 'Jagrut';
+const letters = [...str, ' ', 'S'];
+console.log(letters);
+
+const ingredients = ['Tomato', 'Garlic', 'Spices'];
+restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { Since: 1989, ...restaurant, ownedBy: 'Bakeri group' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Sher-E Punjab';
+console.log(restaurantCopy);
+console.log(restaurant);
+
+/*
 // Destructuring Objects
 
 // const { name, categories, openingHours } = restaurant; // Properties name must be same

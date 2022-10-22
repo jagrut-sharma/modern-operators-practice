@@ -36,11 +36,14 @@ const restaurant = {
   },
 };
 
+// Spread operator
 const arr = [1, 2, 3];
 const newArr = [...arr, 4, 5, 6];
+//merge 2 arrays
 console.log([...newArr, ...arr]);
 console.log(newArr);
 console.log(arr);
+// Separate elements
 console.log(...arr);
 console.log(...newArr);
 
@@ -55,16 +58,21 @@ const mainMenuCopy = [...restaurant.mainMenu];
 const menu = [...mainMenuCopy, ...restaurant.starterMenu];
 console.log(menu);
 
+// Split string into letters
 const str = 'Jagrut';
 const letters = [...str, ' ', 'S'];
 console.log(letters);
 
+// Can be passed as array
+
 const ingredients = ['Tomato', 'Garlic', 'Spices'];
 restaurant.orderPasta(...ingredients);
 
+// creates a shallow copy
 const newRestaurant = { Since: 1989, ...restaurant, ownedBy: 'Bakeri group' };
 console.log(newRestaurant);
 
+// creates a shallow copy
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Sher-E Punjab';
 console.log(restaurantCopy);

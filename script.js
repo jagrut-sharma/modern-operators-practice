@@ -98,6 +98,42 @@ const game = {
   },
 };
 
+/*
+// Iterating objects
+
+// 1. Using keys
+const propertiesObject = Object.keys(openingHours);
+console.log(propertiesObject);
+
+let openStr = `We are open on ${propertiesObject.length} ${
+  propertiesObject.length > 1 ? 'days' : 'day'
+}: `;
+for (const ele of propertiesObject) openStr += `${ele}, `;
+console.log(openStr);
+
+// 2. Using values
+const valuesObject = Object.values(openingHours);
+console.log(valuesObject);
+
+for (const { open, close } of valuesObject) console.log(open, close);
+
+// 3. Entries
+const sampleArray = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(sampleArray);
+
+console.log(sampleArray.entries());
+for (const ele of sampleArray.entries()) {
+  console.log(ele);
+}
+
+const entriesObject = Object.entries(openingHours);
+console.log(entriesObject);
+for (const [key, { open, close }] of entriesObject)
+  console.log(`Timings for ${key} are ${open} to ${close}`);
+
+/*
+// Optional Chaining
+
 // if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
 

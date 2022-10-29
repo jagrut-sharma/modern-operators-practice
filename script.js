@@ -98,7 +98,45 @@ const game = {
   },
 };
 
-// MAps Iteration
+// Maps Iteration
+
+// Multiple values together
+const quiz = new Map([
+  ['Question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Python'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'You are correct🎈'],
+  [false, 'You are wrong :('],
+]);
+console.log(quiz);
+
+// Convert objects to map
+console.log(Object.entries(openingHours));
+const mapObject = new Map(Object.entries(openingHours));
+console.log(mapObject);
+
+for (const ele of mapObject) console.log(ele);
+for (const [key, { open, close }] of mapObject)
+  console.log(`The time for ${key}: Opens => ${open}, Closes => ${close}`);
+
+console.log(`-----------------------`);
+console.log(quiz.get('Question'));
+for (const [key, value] of quiz) {
+  typeof key === 'number' && console.log(key, value);
+}
+
+// const userAnswer = prompt('Your answer: ');
+const userAnswer = 3;
+console.log(userAnswer && quiz.get(Number(userAnswer) === quiz.get('correct')));
+
+// Converting maps to arrays
+
+console.log([...quiz]);
+console.log([quiz.entries()]); // Gives map iterator
+console.log([...quiz.keys()]);
+console.log([...quiz.values()]);
 
 /*
 // MAPS Data structure

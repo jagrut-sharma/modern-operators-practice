@@ -98,6 +98,89 @@ const game = {
   },
 };
 
+// MAps Iteration
+
+/*
+// MAPS Data structure
+
+const rest = new Map();
+rest.set('hello', 'world');
+console.log(rest);
+console.log(rest.set('name', 'Classico Italiano')); // It returns value
+rest.set(1, 'Bangalore, India');
+rest.set(2, 'Hyderabad, India');
+rest
+  .set('categories:', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :)')
+  .set(false, 'We are closed :(');
+
+console.log(rest);
+
+console.log(rest.get('hello'));
+console.log(rest.get('name'));
+console.log(rest.get(1));
+console.log(rest.get(true));
+console.log(rest.get('true')); // SHows value only for boolean and not 'true'
+
+// This true and false can be useful a lot of times
+// const currTime = 8;
+const currTime = 12;
+console.log(
+  rest.get(currTime >= rest.get('open') && currTime <= rest.get('close'))
+);
+
+// Methods available
+console.log(rest.has('categories:'));
+console.log(rest.delete(2)); // Deletes the key with value 2
+console.log(rest);
+console.log(rest.size); // We have 8 keys
+// rest.clear();
+// console.log(rest);
+// rest.set([1, 2], "Where's the food");
+const arr = [1, 2];
+rest.set(arr, "Where's the food");
+console.log(rest);
+console.log(rest.get([1, 2])); // Gives undefined because of reference type. Does not refer to same memory location
+console.log(rest.get(arr)); // For getting same you need to define a variable, that way we will refer to the object at the same memory location
+
+rest.set(document.querySelector('h1'), 'This is a heading'); // Can even be used to select a DOM element
+console.log(rest);
+
+/*
+// SETS Data Structure
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+console.log(orderSet.add('Garlic Bread'));
+orderSet.delete('Pizza');
+console.log(orderSet);
+console.log(new Set('Jagrut Sharma')); // Splits the string
+
+for (const ele of orderSet) console.log(ele);
+console.log(orderSet[0]);
+
+const staff = ['waiter', 'chef', 'manager', 'waiter', 'chef', 'waiter'];
+console.log(staff);
+// const uniqueStaff = new Set(staff);
+const uniqueStaff = [...new Set(staff)];
+console.log(uniqueStaff);
+console.log(new Set(staff).size);
+
+// orderSet.clear()
+// console.log(orderSet);
+
 /*
 // Iterating objects
 

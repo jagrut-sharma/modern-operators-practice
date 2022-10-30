@@ -98,6 +98,33 @@ const game = {
   },
 };
 
+// Coding challenge -2
+
+// for (const index in game.scored) {
+//   console.log(`Goal-${Number(index) + 1}: ${game.scored[index]}`);
+// }
+
+for (const [index, player] of game.scored.entries()) {
+  console.log(`Goal-${index + 1}: ${player}`);
+}
+
+function avg(oddsObject) {
+  let sum = 0;
+  for (const odds of oddsObject) {
+    sum += Number(odds);
+  }
+  console.log(sum);
+  console.log(sum / oddsObject.length);
+}
+
+avg(Object.values(game.odds));
+
+for (const props in game.odds) {
+  console.log(
+    `Odds for ${props === 'x' ? 'draw' : game[props]} are: ${game.odds[props]}`
+  );
+}
+
 /*
 // String Operations
 

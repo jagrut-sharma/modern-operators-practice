@@ -98,6 +98,45 @@ const game = {
   },
 };
 
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// Coding challenge -3
+const events = [...gameEvents];
+console.log(events);
+console.log(gameEvents);
+gameEvents.delete(64);
+console.log(gameEvents);
+
+const sampleEvent = new Set([...gameEvents.values()]);
+console.log(sampleEvent);
+
+const time = [...gameEvents.keys()].pop();
+console.log(
+  `An event happened in the game on an average after every ${
+    time / gameEvents.size
+  }`
+);
+
+for (let [time, currEvent] of gameEvents) {
+  time = Number(time);
+  time <= 45
+    ? console.log(`[FIRST HALF] ${time}: ${currEvent}`)
+    : console.log(`[SECOND HALF] ${time}: ${currEvent}`);
+}
+
+/*
 // Coding challenge -2
 
 // for (const index in game.scored) {
@@ -124,6 +163,12 @@ for (const props in game.odds) {
     `Odds for ${props === 'x' ? 'draw' : game[props]} are: ${game.odds[props]}`
   );
 }
+
+const scorer = new Object();
+scorer.Gnarby = 1;
+scorer.Hummels = 1;
+scorer.Lewandowski = 2;
+console.log(scorer);
 
 /*
 // String Operations

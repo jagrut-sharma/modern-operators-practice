@@ -99,6 +99,79 @@ const game = {
 };
 
 /*
+// String Operations
+
+const airline = 'King fisher airlines';
+console.log(airline.toUpperCase());
+
+const email = '    Hello@jAgrut.Com \n';
+const correctedEmail = function (mail) {
+  return mail.toLowerCase().trim();
+};
+console.log(correctedEmail(email));
+
+const priceEur = '288,99 £';
+console.log(priceEur);
+const priceUS = priceEur.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers, please proceed to boarding door 23. Boarding door 23!';
+// console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate')); // Using Regex, will study later
+
+// Booleans
+const airplane = 'Airbus A320neo';
+console.log(airplane.includes('A320'));
+console.log(airplane.includes('neo'));
+console.log(airplane.startsWith('Air'));
+console.log(airplane.endsWith('0neo'));
+
+console.log('a+very+simple+string'.split('+'));
+console.log('a+very+simple+string'.split('+').join(' '));
+
+console.log('Jagrut Sharma'.split(''));
+const [firstName, lastName] = 'Jagrut Sharma'.split(' '); // Can also use destructuring
+console.log(firstName, '-----', lastName);
+const fullName = ['Mr', firstName, lastName].join(' ');
+console.log(fullName);
+
+function capitalizeName(name) {
+  name = name.toLowerCase().split(' ');
+  console.log(`name: ${name}`);
+  const upperName = [];
+  for (let word of name) {
+    // upperName.push(word[0].toUpperCase() + word.slice(1));
+    upperName.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(upperName.join(' '));
+}
+
+capitalizeName('JOHN LEE DAVIS');
+capitalizeName('jagrut sharma');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+'));
+console.log(message.padStart(25, '+').padEnd(35, '+'));
+
+const maskCreditCard = function (cardNumber) {
+  // console.log(typeof cardNumber);
+  cardNumber = String(cardNumber);
+  // console.log(typeof cardNumber);
+  let newStr = cardNumber.slice(-4);
+  const maskedStr = newStr.padStart(cardNumber.length, 'x');
+  console.log(maskedStr);
+};
+
+maskCreditCard(98765123264513);
+maskCreditCard(14567898102335464);
+maskCreditCard(65494616117);
+
+const message2 = 'Bad weather, ..... All Departures delayed....  ';
+console.log(message2.repeat(5));
+
+/*
 // Strings
 
 const airline = 'King Fisher Airlines';

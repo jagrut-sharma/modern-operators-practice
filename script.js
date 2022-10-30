@@ -98,6 +98,48 @@ const game = {
   },
 };
 
+/*
+// Strings
+
+const airline = 'King Fisher Airlines';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('A316'[3]); // Can be used durectly in string as well.
+
+console.log(`Length: ${airline.length}`);
+console.log(`Length: ${'A316'.length}`); // Can be used durectly in string as well.
+console.log(airline.indexOf('i'));
+console.log(airline.lastIndexOf('i'));
+console.log(airline.indexOf('Airlines')); // Will give inex of first element which is 'A' here, if not present returns -1
+console.log(airline.slice(5)); // Returns string from 5th index element, includes 5th element.
+console.log(airline.slice(5, 11)); // First included, last not included
+
+console.log(airline.slice(0, airline.indexOf(' '))); // As last not included
+console.log(airline.slice(airline.indexOf(' ') + 1)); // As first is included, we don't need space to be included
+
+console.log(airline.slice(-5)); // Counts from last.
+console.log(airline.slice(0, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  seat = seat.slice(-1);
+  seat === 'B' || seat === 'E'
+    ? console.log('Sorry, you got a middle seat')
+    : console.log('You are lucky');
+};
+
+checkMiddleSeat('13A');
+checkMiddleSeat('13B');
+checkMiddleSeat('23C');
+
+console.log(new String('Jagrut'));
+console.log(typeof new String('Jagrut'));
+console.log(typeof new String('Jagrut').slice(-1));
+
+/*
 // Maps Iteration
 
 // Multiple values together

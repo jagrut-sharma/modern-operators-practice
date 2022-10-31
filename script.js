@@ -112,6 +112,48 @@ const gameEvents = new Map([
   [92, '🔶 Yellow card'],
 ]);
 
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const btn = document.querySelector('button');
+const txtArea = document.querySelector('textarea');
+
+btn.addEventListener('click', clickHandler);
+
+const textTransform = function (text) {
+  const separateTxt = text.split('\n');
+  // const transformedTxt = [];
+  let txtHolder = '';
+  for (let txt of separateTxt) {
+    // transformedTxt.push(txt.trim());
+    const [first, second] = txt.toLowerCase().trim().split('_');
+    txtHolder = first + second[0].toUpperCase() + second.slice(1);
+
+    console.log(
+      `${txtHolder.padEnd(20, ' ')}   ${'✅'.repeat(
+        separateTxt.indexOf(txt) + 1
+      )}`
+    );
+  }
+  // for (const currTxt of transformedTxt) {
+  //   console.log(
+  //     `${currTxt.padEnd(20, ' ')}   ${'✅'.repeat(
+  //       transformedTxt.indexOf(currTxt) + 1
+  //     )}`
+  //   );
+  //   // console.log(transformedTxt.indexOf(currTxt));
+  // }
+};
+
+function clickHandler() {
+  const inputTxt = txtArea.value;
+  textTransform(inputTxt);
+}
+
+// first_name
+//   second_name
+//  third_name
+/*
 // Coding challenge -3
 const events = [...gameEvents];
 console.log(events);
